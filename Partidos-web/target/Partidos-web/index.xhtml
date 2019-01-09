@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+<h:outputStylesheet library="css" name="bootstrap.min.css" />
+</h:head> 
+<body>
+
+<h2>Registro de Partidos</h2>
+<h:form>
+	<h:panelGrid columns="2">
+		<h:outputLabel value="Siglas"/>
+		<h:inputText  value="#{partidoController.partido.siglas}"/>
+		
+		<h:outputLabel value="Nombre" />
+		<h:inputText value="#{partidoController.partido.nombre}"/>
+		
+		<h:outputLabel value="Fecha registro" />
+		<h:inputText value="#{partidoController.partido.fechaRegistro}" />
+	</h:panelGrid>
+	<h:commandButton action="#{partidoController.guardar}" value="Guardar" />
+</h:form> 
+<center><h2><h:outputText value="Partidos" /></h2></center>
+<h:form id="partidoForm">
+<h:dataTable id="partidoTable" binding="#{table}" value="#{partidoController.partidos}" var="partido" class="table table-striped table-dark">
+	<h:column>
+		<f:facet name="header" >Id</f:facet>
+		<!-- h:outputText value="#{partido.idPartido}" /-->
+		<h:outputText value="#{table.rowIndex + 1}"/><!--  para mantener la numercaion de lista-->
+	</h:column>
+	<h:column>
+		<f:facet name="header" >Siglas</f:facet>
+		<h:outputText value="#{partido.siglas}" />
+	</h:column>
+	<h:column>
+		<f:facet name="header" >Nombre</f:facet>
+		<h:outputText value="#{partido.nombre}" />
+	</h:column>
+	<h:column>
+		<f:facet name="header">Fecha de Registro</f:facet>
+		<h:outputText value="#{partido.fechaRegistro}" />
+	</h:column>
+	<h:column>
+		<f:facet name="header">Update</f:facet>
+		<h:commandButton class="btn btn-warning" value="Update"/>
+	</h:column>
+	<h:column>
+		<f:facet name="header">Delete</f:facet>
+		<!--h:commandButton action="#{partidoController.eliminar(partido.idPartido)}" class="btn btn-danger" value="Eliminar"/-->
+		<h:commandButton action="#{partidoController.eliminar(partido)}" class="btn btn-danger" value="Eliminar"/>
+	</h:column>
+</h:dataTable>
+</h:form>
+</body> 
+</html>

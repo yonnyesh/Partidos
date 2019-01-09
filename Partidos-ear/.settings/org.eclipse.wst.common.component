@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Partidos-ear-0.0.1-SNAPSHOT">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/ear-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/application" tag="defaultRootSource"/>
+        <dependent-module archiveName="Partidos-ejb-0.0.1-SNAPSHOT.jar" deploy-path="/" handle="module:/resource/Partidos-ejb/Partidos-ejb">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="Partidos-jaxws-0.0.1-SNAPSHOT.war" deploy-path="/" handle="module:/resource/Partidos-jaxws/Partidos-jaxws">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="Partidos-util-0.0.1-SNAPSHOT.jar" deploy-path="/lib" handle="module:/resource/Partidos-util/Partidos-util">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="Partidos-web-0.0.1-SNAPSHOT.war" deploy-path="/" handle="module:/resource/Partidos-web/Partidos-web">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>
